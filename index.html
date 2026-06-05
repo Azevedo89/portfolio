@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Gonçalo Azevedo — Software Engineer based in Madeira, Portugal. Full-stack projects, education, and work experience."
+    />
+    <meta name="theme-color" content="#0B0D12" />
+    <link rel="icon" href="data:," />
+    <link rel="icon" href="blank-favicon-20260517.ico?v=3" sizes="any" />
+    <link rel="shortcut icon" href="blank-favicon-20260517.ico?v=3" />
+    <link rel="icon" type="image/svg+xml" href="blank-favicon-20260517.svg?v=3" />
+    <script>
+      (() => {
+        const blankDataIcon =
+          "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%23000%22 fill-opacity=%220.01%22/%3E%3C/svg%3E";
+        const blankFileIcon = "blank-favicon-20260517.ico?v=" + Date.now();
+        const setBlankFavicon = () => {
+          document.querySelectorAll("link[rel*='icon']").forEach((link) => link.remove());
+
+          const icon = document.createElement("link");
+          icon.rel = "icon";
+          icon.href = blankDataIcon;
+          document.head.appendChild(icon);
+
+          const shortcutIcon = document.createElement("link");
+          shortcutIcon.rel = "shortcut icon";
+          shortcutIcon.href = blankFileIcon;
+          document.head.appendChild(shortcutIcon);
+        };
+
+        setBlankFavicon();
+        window.addEventListener("load", setBlankFavicon, { once: true });
+      })();
+    </script>
+    <meta property="og:title" content="Gonçalo Azevedo · Software Engineer" />
+    <meta property="og:description" content="Portfolio of Gonçalo Azevedo — Software Engineer based in Madeira, Portugal." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://azevedo89.github.io/portfolio/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://azevedo89.github.io/portfolio/" />
+    <title>Gonçalo Azevedo · Software Engineer</title>
+  </head>
+  <body class="bg-background text-foreground">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
