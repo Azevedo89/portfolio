@@ -110,19 +110,69 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <Input placeholder="Your name" aria-label="Name" />
-                <Input type="email" placeholder="Your email" aria-label="Email" />
-                <Input placeholder="Subject" aria-label="Subject" />
-                <Textarea placeholder="Your message" aria-label="Message" />
-                <Button type="button" className="w-full gap-2 rounded-2xl">
+              <form
+                className="space-y-4"
+                action={`https://formsubmit.co/${siteConfig.email}`}
+                method="POST"
+              >
+                {/* FormSubmit configuration */}
+                <input type="hidden" name="_subject" value="New portfolio contact" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://azevedo89.github.io/portfolio/#contacto"
+                />
+                {/* Honeypot — bots fill this, humans don't see it */}
+                <input
+                  type="text"
+                  name="_honey"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
+
+                <Input
+                  name="name"
+                  placeholder="Your name *"
+                  aria-label="Name"
+                  required
+                  minLength={2}
+                  maxLength={80}
+                />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Your email *"
+                  aria-label="Email"
+                  required
+                />
+                <Input
+                  name="subject"
+                  placeholder="Subject *"
+                  aria-label="Subject"
+                  required
+                  minLength={2}
+                  maxLength={120}
+                />
+                <Textarea
+                  name="message"
+                  placeholder="Your message *"
+                  aria-label="Message"
+                  required
+                  minLength={10}
+                  maxLength={2000}
+                />
+                <Button type="submit" className="w-full gap-2 rounded-2xl">
                   Send message
                   <Send className="h-4 w-4" />
                 </Button>
               </form>
 
               <p className="mt-4 text-[11px] leading-5 text-muted/60">
-                This form is visual only. Real contact happens by email or LinkedIn.
+                <span className="text-accent">*</span> All fields are required. Messages are delivered straight to {siteConfig.email}.
               </p>
             </Card>
           </motion.div>
