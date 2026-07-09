@@ -26,6 +26,19 @@ export const projects: Project[] = [
     metrics: ["PT / EN i18n", "SEO + sitemap", "Custom domain"]
   },
   {
+    title: "GestPrime",
+    description:
+      "Institutional website for GestPrime, a Lisbon-based property management and short-term rental (Alojamento Local) company. Built with React + Vite, deployed via GitHub Pages on gestprime.online. Bilingual PT/EN, with hero, services, company info, FAQ, and a contact form via FormSubmit (client-side validation + honeypot anti-spam). Navy & gold identity, fully responsive, content-driven layout with automatic deploy via GitHub Actions.",
+    stack: ["React", "Vite", "JavaScript", "CSS", "GitHub Pages"],
+    role: "Full project: identity, layout, content, contact form & deploy",
+    demoUrl: "https://gestprime.online/",
+    codeUrl: "https://github.com/Azevedo89/gestprime",
+    imageLabel: "Property management",
+    accent: "#F0B429",
+    glow: "rgba(240, 180, 41, 0.32)",
+    metrics: ["PT / EN i18n", "Custom domain", "CI deploy"]
+  },
+  {
     title: "PrimeSystems",
     description:
       "Institutional website for PrimeSystems, the web development brand I build under. Built with React + Vite, deployed via GitHub Pages on primesystems.pt. Acts as the home for client work and the source of the SG Consultoria credit footer.",
